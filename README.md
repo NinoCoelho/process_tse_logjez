@@ -39,12 +39,19 @@ Esse comando gera uma lista das linhas contendo essa sequencia, exemplo:
 21/09/2022 10:32:14	INFO	2074364	SCUE	Identificação do Modelo de Urna: UE2020	33578CB4B9CC1FF8
 ```
 
+## Jupyter Notebook
+
+Jupyter Notebook é uma ferramenta para análise de dados muito utilizada por cientistas de dados. O arquivo **auditoriaEleicoes.ipynb** pode ser aberto nesse âmbiente para gerar gráficos e relatórios a fim de analisar os dados das urnas
+
+
 
 ## Contributing
 
 Fique a vontade pra contribuir ou clonar esse repositorio e realizar suas proprias pesquisas
 
 Nao esqueca de publicar suas conclusoes em suas redes sociais
+
+Eu utilizei o [Microsoft Visual Studio Code](https://code.visualstudio.com/) com o Jupyter Notebook para realizar a análise e o desenvolvimento destes programas
 
 ## License
 
