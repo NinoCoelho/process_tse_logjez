@@ -53,6 +53,10 @@ Nao esqueca de publicar suas conclusoes em suas redes sociais
 
 Eu utilizei o [Microsoft Visual Studio Code](https://code.visualstudio.com/) com o Jupyter Notebook para realizar a análise e o desenvolvimento destes programas
 
+Se você precisar de algum suporte, conte comigo. Basta criar um issue descrevendo sua dúvida que farei o máximo para te ajudar
+
+Repetir essas análises e validar ou contradizer as acusações do PL, assim como os pontos apontados pelo relatório das FFAA ou indícios apontados pelo PSDB em 2014, são um bom caminho para você, profissional de TI, servir de forma patriótica seu paiz.
+
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
