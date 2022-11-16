@@ -41,22 +41,25 @@ votosFields = [
     
 def processaLogUrna(estado:str, logjez:str, fileName:str, logjezZip:ZipFile):
 
-    logFileName = fileName[:-2]+"logjez"
-    iofile = logjezZip.open(logFileName,"r")
+    try:
+        logFileName = fileName[:-2]+"logjez"
+        iofile = logjezZip.open(logFileName,"r")
 
-    logjez_file = py7zr.SevenZipFile(iofile, mode="r")
-    logjez_file.extract("logd.dat")
+        logjez_file = py7zr.SevenZipFile(iofile, mode="r")
+        logjez_file.extract("logd.dat")
 
-    modelo = "Unknown"
+        modelo = "Unknown"
 
-    contents = open("./logd.dat/logd.dat", encoding="iso-8859-1")
-    for line in contents.readlines():
-        if line.find("Modelo de Urna") > 0:
-            modelo = line.split()[10]
-            break
+        contents = open("./logd.dat/logd.dat", encoding="iso-8859-1")
+        for line in contents.readlines():
+            if line.find("Modelo de Urna") > 0:
+                modelo = line.split()[10]
+                break
+        contents.close()
+        os.unlink("./logd.dat/*")
+    except:
+        modelo = "SemLog" 
 
-    contents.close()
-    os.unlink("./logd.dat/logd.dat")
     return modelo
     
     
@@ -124,16 +127,16 @@ def processBU(estado:str, logjez:str, fileName:str, logjezZip:ZipFile):
     return urnas, votos
 
 def main():
-    folder = "c:\PythonEleicoesBrasil\logjez_process\logjez\*.zip"
+    folder = ".\logjez\*.zip"
 
     files = glob.glob(folder)
     for logjez in files:
 
-        estado = logjez.split(".")[0][-2:] #deriva o estado a partir do nome do arquivo
+        estado = logjez.split(".")[1][-2:] #deriva o estado a partir do nome do arquivo
         print("Processando estado " + estado +" logjez "+logjez)
 
-        urnasFile = open(estado+".urnas.csv", 'w', newline='')
-        votosFile = open(estado+".votos.csv", 'w', newline='')
+        urnasFile = open(".\csv_gerados\\"+estado+".urnas.csv", 'w', newline='')
+        votosFile = open(".\csv_gerados\\"+estado+".votos.csv", 'w', newline='')
 
         urnasCSV = csv.writer(urnasFile)
         votosCSV = csv.writer(votosFile)
@@ -146,7 +149,7 @@ def main():
         with ZipFile(logjez) as logjezZip:
             for file in logjezZip.namelist():
                 if (file.endswith(".bu")):
-                    print("Processando arquivo "+file)
+                    print(estado+" "+file)
                     urnas, votos = processBU(estado, logjez, file, logjezZip)
                     urnasCSV.writerows(urnas)
                     votosCSV.writerows(votos)
