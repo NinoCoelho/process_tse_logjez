@@ -15,7 +15,7 @@ Eu utilizei o [Microsoft Visual Studio Code](https://code.visualstudio.com/) com
 
 ## Usage
 
-Para processar os arquivos da pasta **logjez** e gerar os respectivos na pasta **csv_gerados**
+Para processar os arquivos da pasta **logjez** e gerar os respectivos na pasta **csv_gerados**, primeira mente crie estas duas pastas na pasta onde baixou o projeto, e depois execute o comando:
 
 ```shell
 python logjez_process.py
