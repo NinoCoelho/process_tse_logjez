@@ -6,6 +6,8 @@ Há 2 scripts em python principais. Um processa todos os arquivos gerando 2 arqu
 
 Há também um Jupyter Notebook pronto para gerar as análises e gráficos básicos.
 
+Para sua conveniência, incluí os arquivos que eu gerei previamente na pasta **csv_gerados**, assim você poderá executar o notebook de análise dos dados tão logo você baixe esse repositório.
+
 Jupyter Notebook é uma das mais utilizadas ferramentas em Data Science (ciencia de dados) e permite processar e visualizar grande quantidade de informação com rapidez e precisão. 
 
 [Clique aqui para visualizar um exemplo das informações extraídas com esse estudo](https://htmlpreview.github.io/?https://raw.githubusercontent.com/NinoCoelho/process_tse_logjez/master/auditoriaEleicoes.html)
