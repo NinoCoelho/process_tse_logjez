@@ -21,19 +21,23 @@ def processaLogUrna(estado:str, logjez:str, fileName:str, logjezZip:ZipFile, sea
         logjez_file = py7zr.SevenZipFile(iofile, mode="r")
         logjez_file.extract("logd.dat")
 
-        modelo = "Unknown"
-
         contents = open("./logd.dat/logd.dat", encoding="iso-8859-1")
         countLines = 0
+        logFileName = os.path.basename(logjez)
         for line in contents.readlines():
             countLines += 1
             if line.find(searchFor) > 0:
-                print(fileName+" "+countLines+": "+line)
+                print(estado+":"+logFileName+":"+fileName+" - "+str(countLines)+": "+line, end="")
 
         contents.close()
-        os.unlink("./logd.dat/logd.dat")
-    except:
+
+    except Exception as err:
         print(fileName+": ERRO ABRINDO ARQUIVO")
+    finally:
+        try:
+            os.unlink("./logd.dat/*")
+        except:
+            pass
 
 def main():
     folder = "C:\process_tse_logjez\logjez\*.zip"
@@ -48,17 +52,11 @@ def main():
     for logjez in files:
 
         estado = logjez.split(".")[0][-2:] #deriva o estado a partir do nome do arquivo
-        print("Processando estado " + estado +" logjez "+logjez)
-
-        tempCount = 0
 
         with ZipFile(logjez) as logjezZip:
             for file in logjezZip.namelist():
                 if (file.endswith(".logjez")):
                     processaLogUrna(estado, logjez, file, logjezZip, searchFor)
-                # tempCount+=1
-                # if tempCount > 100: break
-            # if tempCount > 100: break
 
 if __name__ == "__main__":
     main()
