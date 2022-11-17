@@ -47,6 +47,8 @@ Esse comando gera uma lista das linhas contendo essa sequencia, exemplo:
 21/09/2022 10:32:14	INFO	2074364	SCUE	Identificação do Modelo de Urna: UE2020	33578CB4B9CC1FF8
 ```
 
+O arquivo [modeloDeUrna.zip](modeloDeUrna.zip) contem a extração acima para todas as urnas do Brasil, e mostra que, enquanto as urnas UE2020 contém as identificações de urna corretas, todos os modelos anteriores tem o código de urna cravado como 67305985, o que prova que 1) o software instalado nas urnas UE2020 difere das anteriores e 2) há uma falha nessas urnas antigas que pode ter sido causada pelo software malicioso que fraudou os votos. Possivelmente, no fechamento das urnas, o log era adulterado  para esconder evidências das fraudes, porém o desenvolvedor não conseguiu capturar o código da urna, ou errou na hora de formatar o log fraudado.
+
 ## Jupyter Notebook
 
 Jupyter Notebook é uma ferramenta para análise de dados muito utilizada por cientistas de dados. O arquivo **auditoriaEleicoes.ipynb** pode ser aberto nesse âmbiente para gerar gráficos e relatórios a fim de analisar os dados das urnas
