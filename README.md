@@ -14,6 +14,8 @@ Jupyter Notebook é uma das mais utilizadas ferramentas em Data Science (ciencia
 
 Usando esse projeto você pode, não só repetir esse estudo, mas realizar outros estudos, já que há muito mais informação disponível, que não foram consideradas nesse estudo preliminar
 
+<B>Gostaria de adicionar que, segundo o que afirmaram especialistas, e eu comprovei nesse Jupyter Notebook, os gráficos de dispersão apresentados anteriormente não necessariamente comprovam fraude nas urnas. A única evidência de inconsistência forte que encontrei até agora é o fato de os logs das urnas antigas não apresentarem o código da urna, o que demonstra que há diferença no software das urnas antigas, em relação a nova (UE2020), o que pode indicar um erro simples, ou a presença de algum software que poderia ser malicioso</B>
+
 ## Instalação
 
 
